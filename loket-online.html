@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Loket Iuran Sampah - BUMDES SEA TUMPENGAN</title>
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Loket Iuran Sampah - BUMDES SEA TUMPENGAN</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0F5C4D"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
 <style>
 :root{--g:#0F5C4D;--g2:#E1EFEA;--ink:#1B2A27;--bg:#EDF1F0;--amb:#E9A23B;--line:#D3DDDA;--red:#B3382C}
 *{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:15px}
@@ -181,5 +181,6 @@ const FBC={apiKey:"AIzaSyBPDKyYRRbH5JyAX3-OQwFPX5Lv88_O-sw",authDomain:"loket-sa
 function init(){let c=null;try{c=JSON.parse(localStorage.getItem('fbc')||'null')}catch(x){}c=c||FBC;
  if(!c||!window.firebase){setupFb();return}
  firebase.initializeApp(c);FS=firebase.firestore();AUTH=firebase.auth();AUTH2=firebase.initializeApp(c,'b').auth();AUTH.onAuthStateChanged(onAuth);cekAwal()}
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 init();
 </script></body></html>
